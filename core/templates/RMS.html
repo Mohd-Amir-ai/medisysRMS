@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/RMS.css' %}">
+    <link rel="shortcut icon" href="/res/medisys.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com ">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script>
+    const HIGH_PRESSURE_ALARM_URL = "{% static 'alarm/High_pressure.wav' %}";
+    </script>
+    <script src="{% static 'js/sups.js' %}" defer></script>
+    <script src="{% static 'js/worker.js' %}" defer></script>
+    <title>Medisys-RMS</title>
+</head>
+
+<body>
+    <section class="h">
+        <div class="h__root flex sp-btwn m-20">
+            <div class="h__logo">
+                <img src="{% static 'res/medisys.svg' %}" alt="Medisys" srcset="">
+            </div>
+            <div class="h__maine flex y-center">
+                <div class="h__manu flex p-10 font-semibold y-center ">
+                    <div class="h__status--connected rounded-full"></div>Connected
+                </div>
+                <div class="h__manu p-10">Machine : excelsior </div>
+                <div class="h__manu p-10">ID 2001</div>
+                <div class="h__manu p-10"><img src="{% static 'res/Wifi.svg' %}" alt="" srcset=""></div>
+                <div class="h__manu flex  ">
+                    <div class="lable--gray" id="date">Nov 15, 2025</div>
+                    <div class="lable--gray ml-10" id="time">2:10 PM</div>
+                </div>
+                <div class="h__manu ml-15 "><img src="{% static 'res/medisys_logo--10245.svg' %}" alt="" srcset=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w_a m-20 flex">
+        <div class="w__root ">
+            <h2 class="mb-30">Waveforms</h2>
+            <canvas id="waveform"></canvas>
+            <canvas id="waves"></canvas>
+            <div class="w__name">
+                <h4>Pressure <span class="font-light text-sm">(cmH_2O)</span></h4>
+            </div>
+            <div class="w__info__root mt-30">
+                <div>
+                    <h2>Information</h2>
+                </div>
+                <div class="info__boxes mt-20 flex g-20">
+                    <div class="info">
+                        <div class="info__name">Rate</div>
+                        <div class="info__perameter">22 BPM</div>
+                        <div class="info__time">Time :15:41:26</div>
+                    </div>
+                    <div class="info">
+                        <div class="info__name">FiO2</div>
+                        <div class="info__perameter">21 %</div>
+                        <div class="info__time">Time :15:41:26</div>
+                    </div>
+                    <div class="info">
+                        <div class="info__name">Ppeak</div>
+                        <div class="info__perameter">25 cmH2o</div>
+                        <div class="info__time">Time :15:41:26</div>
+                    </div>
+                    <div class="info">
+                        <div class="info__name">Pmean</div>
+                        <div class="info__perameter">5 cmH2o</div>
+                        <div class="info__time">Time :15:41:26</div>
+                    </div>
+                    <div class="info">
+                        <div class="info__name">I/E</div>
+                        <div class="info__perameter">1 : 2</div>
+                        <div class="info__time">Time :15:41:26</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="a__root">
+            <div class="a__heading">
+                <h2 class="mb-25">Alarms</h2>
+            </div>
+            <div class="a__alarms--demo flex flex-wrap g-20">
+                <div class="alarm--normal" id="highPressureAlarm"> 
+                    <div class="alarm__alarm__name--active">High Pressure</div>
+                    <div class="alarm__alarm__perameter--active">-</div>
+                    <div class="alarm__alarm__time--active">Time : - </div>
+                </div>
+
+                <div class="alarm--normal">
+                    <div class="alarm__alarm__name--normal">High RR</div>
+                    <div class="alarm__alarm__perameter--normal">22 BPM</div>
+                    <div class="alarm__alarm__time--normal">No alarm</div>
+                </div>
+                <div class="alarm--normal">
+                    <div class="alarm__alarm__name--normal">Low Pressure</div>
+                    <div class="alarm__alarm__perameter--normal">8 mbar</div>
+                    <div class="alarm__alarm__time--normal">No alarm</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

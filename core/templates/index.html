@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/RMS.css' %}">
+    <link rel="shortcut icon" href="/res/medisys.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Medisys-RMS</title>
+</head>
+
+<body>
+    <section class="h">
+        <div class="h__root flex sp-btwn m-20">
+            <div class="h__logo">
+                <img src="{% static 'res/medisys.svg' %}" alt="" srcset="">
+            </div>
+            <div class="h__maine flex y-center">
+                <div class="h__manu flex p-10 font-semibold y-center ">
+                    <div class="h__status--connected rounded-full"></div>Connected
+                </div>
+                <div class="h__manu p-10">Machine : excelsior </div>
+                <div class="h__manu p-10">ID 2001</div>
+                <div class="h__manu p-10"><img src="/res/Wifi.svg" alt="" srcset=""></div>
+                <div class="h__manu flex  ">
+                    <div class="lable--gray" id="date">Nov 15, 2025</div>
+                    <div class="lable--gray ml-10" id="time">2:10 PM</div>
+                </div>
+                <div class="h__manu ml-15 "><img src="/res/medisys_logo--10245.svg" alt="" srcset=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="machine__list m-30 pt-20">
+        <div class="root">
+            <h2>Machines</h2>
+
+            <div class="machine__list__list mt-30">
+                <div class="box--light g-5 flex-col br-8" onclick="window.location.href = 'RMS/'">
+                    <div><h3 class="machine__list__name font-bold">Neo Care</h3></div>
+                    <div><p class="machine__list__id text-secondary">id : nc2501</p></div>
+                    <div><p class="machine__list__lastupdated text-secondary">Last updated : 13:05:24</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
